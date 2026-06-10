@@ -50,6 +50,7 @@
     .modal-btn:hover { background: #2563eb; transform: translateY(-1px); }
     .card.hidden { display: none; }
     @media (max-width: 480px) { header { padding: 36px 16px 24px; } .grid { grid-template-columns: 1fr; } }
+    .badge-new{background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;letter-spacing:.04em;flex-shrink:0}
   </style>
 </head>
 <body>
@@ -61,60 +62,53 @@
 <div class="filter-bar">
   <button class="filter-btn active" data-filter="all">すべて</button>
   <button class="filter-btn" data-filter="企画">企画</button>
-  <button class="filter-btn" data-filter="生産性">生産性</button>
   <button class="filter-btn" data-filter="ガチャ">ガチャ</button>
   <button class="filter-btn" data-filter="画像">画像</button>
   <button class="filter-btn" data-filter="チェッカー">チェッカー</button>
-  <button class="filter-btn" data-filter="ダウンローダー">ダウンローダー</button>
 </div>
 
 <div class="grid" id="grid">
 
+  <!-- 1. P1レース -->
+  <div class="card" data-category="企画" data-name="P1レース　パルム記念杯"
+    data-url="https://orekun-palmu.github.io/p1-race/"
+    data-desc="競馬のようなレースができる企画ツール。リアグや還元など色んな企画に使用可能。"
+    data-tags="企画">
+    <div class="card-top">
+      <h2>P1レース　パルム記念杯</h2>
+      <div class="card-tags"><span class="card-category kikaku">企画</span><span class="badge-new">NEW</span></div>
+    </div>
+    <p class="card-desc">競馬のようなレースができる。リアグや還元など色んな企画に使用可能。</p>
+    <a class="card-link" href="https://orekun-palmu.github.io/p1-race/" target="_blank" rel="noopener" onclick="event.stopPropagation()">orekun-palmu.github.io<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg></a>
+  </div>
+
+  <!-- 2. すごろく -->
   <div class="card" data-category="企画" data-name="すごろく"
     data-url="https://orekun-palmu.github.io/sugoroku"
     data-desc="すごろくでコラボ相手と遊ぶのもよし、リスナーさんといろんな企画の一部として使用も可能。マスの内容も自由にカスタマイズできる。"
     data-tags="企画">
     <div class="card-top">
       <h2>すごろく</h2>
-      <div class="card-tags"><span class="card-category kikaku">企画</span></div>
+      <div class="card-tags"><span class="card-category kikaku">企画</span><span class="badge-new">NEW</span></div>
     </div>
     <p class="card-desc">コラボ相手と遊ぶもよし、リスナーさんとの企画にも。マスの内容を自由にカスタマイズできる。</p>
-    <a class="card-link" href="https://orekun-palmu.github.io/sugoroku" target="_blank" rel="noopener" onclick="event.stopPropagation()">
-      orekun-palmu.github.io
-      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
-    </a>
+    <a class="card-link" href="https://orekun-palmu.github.io/sugoroku" target="_blank" rel="noopener" onclick="event.stopPropagation()">orekun-palmu.github.io<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg></a>
   </div>
 
-  <div class="card" data-category="ガチャ" data-name="くじ引き（番号・リスト）"
-    data-url="https://rakko.tools/tools/91/"
-    data-desc="番号またはリストから簡易くじ引きができるツール。役職ガチャなど複数の選択肢から公平に選びたいときに便利。"
-    data-tags="ガチャ 企画">
+  <!-- 3. 全ギフカウンター -->
+  <div class="card" data-category="チェッカー" data-name="Palmuの全ギフカウンター"
+    data-url="https://orekun-palmu.github.io/palmu-counter/"
+    data-desc="全ギフ耐久の時にチェックができ、進捗も見える。一覧にないギフトも記入欄があるので対応幅が広い。"
+    data-tags="チェッカー 企画">
     <div class="card-top">
-      <h2>くじ引き（番号・リスト）</h2>
-      <div class="card-tags"><span class="card-category">ガチャ</span><span class="card-category kikaku">企画</span></div>
+      <h2>Palmuの全ギフカウンター</h2>
+      <div class="card-tags"><span class="card-category">チェッカー</span><span class="card-category kikaku">企画</span><span class="badge-new">NEW</span></div>
     </div>
-    <p class="card-desc">番号またはリストから簡易くじ引き。役職ガチャなど複数の選択肢から公平に選びたいときに便利。</p>
-    <a class="card-link" href="https://rakko.tools/tools/91/" target="_blank" rel="noopener" onclick="event.stopPropagation()">
-      rakko.tools
-      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
-    </a>
+    <p class="card-desc">全ギフ耐久の進捗チェックに。一覧にないギフトも記入欄があるので対応幅が広い。</p>
+    <a class="card-link" href="https://orekun-palmu.github.io/palmu-counter/" target="_blank" rel="noopener" onclick="event.stopPropagation()">orekun-palmu.github.io<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg></a>
   </div>
 
-  <div class="card" data-category="ガチャ" data-name="スーパーガチャ"
-    data-url="https://namazu-tools.net/accounts/login/?next=/super-gacha/"
-    data-desc="Googleアカウントでログイン必須。使用条件があるものの、それさえ守ればどんなライバーさんも簡単にガチャを制作できる。"
-    data-tags="ガチャ 企画">
-    <div class="card-top">
-      <h2>スーパーガチャ</h2>
-      <div class="card-tags"><span class="card-category">ガチャ</span><span class="card-category kikaku">企画</span></div>
-    </div>
-    <p class="card-desc">Googleアカウントでログイン必須。条件を守ればどんなライバーさんも簡単にガチャを制作できる。</p>
-    <a class="card-link" href="https://namazu-tools.net/accounts/login/?next=/super-gacha/" target="_blank" rel="noopener" onclick="event.stopPropagation()">
-      namazu-tools.net
-      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
-    </a>
-  </div>
-
+  <!-- 4. パネル開け -->
   <div class="card" data-category="画像" data-name="パネル開け"
     data-url="https://rabitt-live.vercel.app/panel"
     data-desc="5〜12マスなら画像をアップロードするだけでパネル開けが作れる。準備の手間がほぼゼロでかんたんに使える。"
@@ -124,58 +118,37 @@
       <div class="card-tags"><span class="card-category">画像</span><span class="card-category kikaku">企画</span></div>
     </div>
     <p class="card-desc">5〜12マスなら画像をアップロードするだけでパネル開けが作れる。準備の手間がほぼゼロ。</p>
-    <a class="card-link" href="https://rabitt-live.vercel.app/panel" target="_blank" rel="noopener" onclick="event.stopPropagation()">
-      rabitt-live.vercel.app
-      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
-    </a>
+    <a class="card-link" href="https://rabitt-live.vercel.app/panel" target="_blank" rel="noopener" onclick="event.stopPropagation()">rabitt-live.vercel.app<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg></a>
   </div>
 
-  <div class="card" data-category="チェッカー" data-name="Palmuの全ギフカウンター"
-    data-url="https://orekun-palmu.github.io/palmu-counter/"
-    data-desc="全ギフ耐久の時にチェックができ、進捗も見える。一覧にないギフトも記入欄があるので対応幅が広い。"
-    data-tags="チェッカー 企画">
+  <!-- 5. くじ引き -->
+  <div class="card" data-category="ガチャ" data-name="くじ引き（番号・リスト）"
+    data-url="https://rakko.tools/tools/91/"
+    data-desc="番号またはリストから簡易くじ引きができるツール。役職ガチャなど複数の選択肢から公平に選びたいときに便利。"
+    data-tags="ガチャ 企画">
     <div class="card-top">
-      <h2>Palmuの全ギフカウンター</h2>
-      <div class="card-tags"><span class="card-category">チェッカー</span><span class="card-category kikaku">企画</span></div>
+      <h2>くじ引き（番号・リスト）</h2>
+      <div class="card-tags"><span class="card-category">ガチャ</span><span class="card-category kikaku">企画</span></div>
     </div>
-    <p class="card-desc">全ギフ耐久の進捗チェックに。一覧にないギフトも記入欄があるので対応幅が広い。</p>
-    <a class="card-link" href="https://orekun-palmu.github.io/palmu-counter/" target="_blank" rel="noopener" onclick="event.stopPropagation()">
-      orekun-palmu.github.io
-      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
-    </a>
+    <p class="card-desc">番号またはリストから簡易くじ引き。役職ガチャなど複数の選択肢から公平に選びたいときに便利。</p>
+    <a class="card-link" href="https://rakko.tools/tools/91/" target="_blank" rel="noopener" onclick="event.stopPropagation()">rakko.tools<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg></a>
   </div>
 
-  <div class="card" data-category="ダウンローダー" data-name="cobalt — SNS動画保存"
-    data-url="https://cobalt.tools"
-    data-desc="対応サイトのURLを貼り付けるだけで、動画・音声・画像を保存できる。余計な広告や登録なしで使えるシンプルなダウンローダー。"
-    data-tags="ダウンローダー">
+  <!-- 6. スーパーガチャ -->
+  <div class="card" data-category="ガチャ" data-name="スーパーガチャ"
+    data-url="https://namazu-tools.net/accounts/login/?next=/super-gacha/"
+    data-desc="Googleアカウントでログイン必須。使用条件があるものの、それさえ守ればどんなライバーさんも簡単にガチャを制作できる。"
+    data-tags="ガチャ 企画">
     <div class="card-top">
-      <h2>cobalt — SNS動画保存</h2>
-      <div class="card-tags"><span class="card-category">ダウンローダー</span></div>
+      <h2>スーパーガチャ</h2>
+      <div class="card-tags"><span class="card-category">ガチャ</span><span class="card-category kikaku">企画</span></div>
     </div>
-    <p class="card-desc">URLを貼るだけで動画・音声・画像を保存。広告なし・登録なしで使えるシンプルなダウンローダー。</p>
-    <a class="card-link" href="https://cobalt.tools" target="_blank" rel="noopener" onclick="event.stopPropagation()">
-      cobalt.tools
-      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
-    </a>
-  </div>
-
-  <div class="card" data-category="生産性" data-name="Notion"
-    data-url="https://notion.so"
-    data-desc="メモ・タスク・データベースが一体になったツール。ドキュメント管理からプロジェクト管理まで何でもこなせる万能ワークスペース。"
-    data-tags="生産性">
-    <div class="card-top">
-      <h2>Notion</h2>
-      <div class="card-tags"><span class="card-category">生産性</span></div>
-    </div>
-    <p class="card-desc">メモ・タスク・データベースが一体になったツール。ドキュメント管理からプロジェクト管理まで何でもこなせる。</p>
-    <a class="card-link" href="https://notion.so" target="_blank" rel="noopener" onclick="event.stopPropagation()">
-      notion.so
-      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
-    </a>
+    <p class="card-desc">Googleアカウントでログイン必須。条件を守ればどんなライバーさんも簡単にガチャを制作できる。</p>
+    <a class="card-link" href="https://namazu-tools.net/accounts/login/?next=/super-gacha/" target="_blank" rel="noopener" onclick="event.stopPropagation()">namazu-tools.net<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg></a>
   </div>
 
 </div>
+
 
 <!-- モーダル -->
 <div class="overlay" id="overlay" role="dialog" aria-modal="true">
