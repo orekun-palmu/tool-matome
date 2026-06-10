@@ -6,261 +6,53 @@
   <title>ツール帳 — 便利なウェブアプリまとめ</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #0d0d0f;
-      --bg2: #16161a;
-      --bg3: #1e1e24;
-      --border: rgba(255,255,255,0.08);
-      --text: #f0f0f0;
-      --text-muted: #888;
-      --blue-light: #bcd8f5;
-      --blue-mid: #5ba4e8;
-      --blue-pop: #3b82f6;
-      --blue-bg: #1a2840;
-      --blue-border: rgba(91,164,232,0.3);
-      --radius: 12px;
-      --radius-sm: 8px;
+      --bg: #0d0d0f; --bg2: #16161a; --bg3: #1e1e24;
+      --border: rgba(255,255,255,0.08); --text: #f0f0f0; --text-muted: #888;
+      --blue-light: #bcd8f5; --blue-mid: #5ba4e8; --blue-pop: #3b82f6;
+      --blue-bg: #1a2840; --blue-border: rgba(91,164,232,0.3);
+      --radius: 12px; --radius-sm: 8px;
     }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
-      min-height: 100vh;
-      line-height: 1.7;
-    }
-
-    /* ヘッダー */
-    header {
-      padding: 48px 24px 32px;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-    }
-    header h1 {
-      font-size: clamp(28px, 5vw, 44px);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #fff;
-    }
-    header h1 span {
-      color: var(--blue-mid);
-    }
-    header p {
-      margin-top: 10px;
-      color: var(--text-muted);
-      font-size: 15px;
-    }
-
-    /* フィルター */
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-      padding: 24px 16px;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-    .filter-btn {
-      background: var(--bg2);
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 6px 16px;
-      font-size: 13px;
-      cursor: pointer;
-      transition: all 0.18s;
-      font-family: inherit;
-    }
-    .filter-btn:hover {
-      border-color: var(--blue-border);
-      color: var(--blue-light);
-    }
-    .filter-btn.active {
-      background: var(--blue-pop);
-      border-color: var(--blue-pop);
-      color: #fff;
-    }
-
-    /* グリッド */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 16px;
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 16px 80px;
-    }
-
-    /* カード */
-    .card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-      cursor: pointer;
-      transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .card:hover {
-      transform: translateY(-3px);
-      border-color: var(--blue-border);
-      box-shadow: 0 8px 32px rgba(59,130,246,0.12);
-    }
-    .card-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .card h2 {
-      font-size: 16px;
-      font-weight: 600;
-      color: #fff;
-      line-height: 1.4;
-    }
-    .card-category {
-      background: var(--blue-bg);
-      color: var(--blue-light);
-      border: 1px solid var(--blue-border);
-      border-radius: 999px;
-      font-size: 11px;
-      padding: 3px 10px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .card-desc {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.65;
-      flex: 1;
-    }
-    .card-link {
-      font-size: 12px;
-      color: var(--blue-mid);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      margin-top: auto;
-      opacity: 0.8;
-      transition: opacity 0.15s;
-    }
+    body { background: var(--bg); color: var(--text); font-family: 'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif; min-height: 100vh; line-height: 1.7; }
+    header { padding: 48px 24px 32px; text-align: center; border-bottom: 1px solid var(--border); }
+    header h1 { font-size: clamp(28px,5vw,44px); font-weight: 700; letter-spacing: -0.02em; color: #fff; }
+    header h1 span { color: var(--blue-mid); }
+    header p { margin-top: 10px; color: var(--text-muted); font-size: 15px; }
+    .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding: 24px 16px; max-width: 860px; margin: 0 auto; }
+    .filter-btn { background: var(--bg2); color: var(--text-muted); border: 1px solid var(--border); border-radius: 999px; padding: 6px 16px; font-size: 13px; cursor: pointer; transition: all 0.18s; font-family: inherit; }
+    .filter-btn:hover { border-color: var(--blue-border); color: var(--blue-light); }
+    .filter-btn.active { background: var(--blue-pop); border-color: var(--blue-pop); color: #fff; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 16px; max-width: 960px; margin: 0 auto; padding: 0 16px 80px; }
+    .card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; cursor: pointer; transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s; display: flex; flex-direction: column; gap: 10px; }
+    .card:hover { transform: translateY(-3px); border-color: var(--blue-border); box-shadow: 0 8px 32px rgba(59,130,246,0.12); }
+    .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .card h2 { font-size: 16px; font-weight: 600; color: #fff; line-height: 1.4; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .card-category { background: var(--blue-bg); color: var(--blue-light); border: 1px solid var(--blue-border); border-radius: 999px; font-size: 11px; padding: 3px 10px; white-space: nowrap; flex-shrink: 0; }
+    .card-category.kikaku { background: #1a2e1a; color: #86efac; border-color: rgba(74,222,128,0.3); }
+    .card-desc { font-size: 13px; color: var(--text-muted); line-height: 1.65; flex: 1; }
+    .card-link { font-size: 12px; color: var(--blue-mid); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: auto; opacity: 0.8; transition: opacity 0.15s; }
     .card-link:hover { opacity: 1; }
     .card-link svg { width: 12px; height: 12px; }
-
-    /* モーダル オーバーレイ */
-    .overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.7);
-      backdrop-filter: blur(4px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      z-index: 100;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s;
-    }
-    .overlay.open {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    /* モーダル本体 */
-    .modal {
-      background: var(--blue-bg);
-      border: 1px solid var(--blue-border);
-      border-radius: 16px;
-      padding: 28px;
-      max-width: 480px;
-      width: 100%;
-      transform: translateY(12px);
-      transition: transform 0.22s;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
-    }
-    .overlay.open .modal {
-      transform: translateY(0);
-    }
-    .modal-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-    .modal-header h3 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.4;
-    }
-    .modal-close {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      cursor: pointer;
-      font-size: 22px;
-      line-height: 1;
-      flex-shrink: 0;
-      padding: 0 2px;
-      transition: color 0.15s;
-    }
+    .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 100; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
+    .overlay.open { opacity: 1; pointer-events: all; }
+    .modal { background: var(--blue-bg); border: 1px solid var(--blue-border); border-radius: 16px; padding: 28px; max-width: 480px; width: 100%; transform: translateY(12px); transition: transform 0.22s; box-shadow: 0 24px 64px rgba(0,0,0,0.5); }
+    .overlay.open .modal { transform: translateY(0); }
+    .modal-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .modal-header h3 { font-size: 20px; font-weight: 700; color: #fff; line-height: 1.4; }
+    .modal-close { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 22px; line-height: 1; flex-shrink: 0; padding: 0 2px; transition: color 0.15s; }
     .modal-close:hover { color: #fff; }
-    .modal-category {
-      background: rgba(91,164,232,0.15);
-      color: var(--blue-light);
-      border: 1px solid var(--blue-border);
-      border-radius: 999px;
-      font-size: 12px;
-      padding: 4px 12px;
-      display: inline-block;
-      margin-bottom: 14px;
-    }
-    .modal-desc {
-      font-size: 14px;
-      color: #c8c8d0;
-      line-height: 1.75;
-      margin-bottom: 20px;
-      white-space: pre-line;
-    }
-    .modal-btn {
-      display: block;
-      width: 100%;
-      background: var(--blue-pop);
-      color: #fff;
-      text-align: center;
-      text-decoration: none;
-      border-radius: var(--radius-sm);
-      padding: 12px;
-      font-size: 14px;
-      font-weight: 600;
-      font-family: inherit;
-      border: none;
-      cursor: pointer;
-      transition: background 0.15s, transform 0.12s;
-    }
-    .modal-btn:hover {
-      background: #2563eb;
-      transform: translateY(-1px);
-    }
-
-    /* hidden card */
+    .modal-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .modal-category { background: rgba(91,164,232,0.15); color: var(--blue-light); border: 1px solid var(--blue-border); border-radius: 999px; font-size: 12px; padding: 4px 12px; display: inline-block; }
+    .modal-category.kikaku { background: rgba(74,222,128,0.1); color: #86efac; border-color: rgba(74,222,128,0.3); }
+    .modal-desc { font-size: 14px; color: #c8c8d0; line-height: 1.75; margin-bottom: 20px; white-space: pre-line; }
+    .modal-btn { display: block; width: 100%; background: var(--blue-pop); color: #fff; text-align: center; text-decoration: none; border-radius: var(--radius-sm); padding: 12px; font-size: 14px; font-weight: 600; font-family: inherit; border: none; cursor: pointer; transition: background 0.15s, transform 0.12s; }
+    .modal-btn:hover { background: #2563eb; transform: translateY(-1px); }
     .card.hidden { display: none; }
-
-    @media (max-width: 480px) {
-      header { padding: 36px 16px 24px; }
-      .grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 480px) { header { padding: 36px 16px 24px; } .grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-
 <header>
   <h1>ツール<span>帳</span></h1>
   <p>配信・作業で使える便利なウェブアプリまとめ</p>
@@ -268,6 +60,7 @@
 
 <div class="filter-bar">
   <button class="filter-btn active" data-filter="all">すべて</button>
+  <button class="filter-btn" data-filter="企画">企画</button>
   <button class="filter-btn" data-filter="生産性">生産性</button>
   <button class="filter-btn" data-filter="ガチャ">ガチャ</button>
   <button class="filter-btn" data-filter="画像">画像</button>
@@ -277,28 +70,28 @@
 
 <div class="grid" id="grid">
 
-  <div class="card" data-category="生産性"
-    data-name="Notion"
-    data-url="https://notion.so"
-    data-desc="メモ・タスク・データベースが一体になったツール。ドキュメント管理からプロジェクト管理まで何でもこなせる万能ワークスペース。">
+  <div class="card" data-category="企画" data-name="すごろく"
+    data-url="https://orekun-palmu.github.io/sugoroku"
+    data-desc="すごろくでコラボ相手と遊ぶのもよし、リスナーさんといろんな企画の一部として使用も可能。マスの内容も自由にカスタマイズできる。"
+    data-tags="企画">
     <div class="card-top">
-      <h2>Notion</h2>
-      <span class="card-category">生産性</span>
+      <h2>すごろく</h2>
+      <div class="card-tags"><span class="card-category kikaku">企画</span></div>
     </div>
-    <p class="card-desc">メモ・タスク・データベースが一体になったツール。ドキュメント管理からプロジェクト管理まで何でもこなせる。</p>
-    <a class="card-link" href="https://notion.so" target="_blank" rel="noopener" onclick="event.stopPropagation()">
-      notion.so
+    <p class="card-desc">コラボ相手と遊ぶもよし、リスナーさんとの企画にも。マスの内容を自由にカスタマイズできる。</p>
+    <a class="card-link" href="https://orekun-palmu.github.io/sugoroku" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+      orekun-palmu.github.io
       <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
     </a>
   </div>
 
-  <div class="card" data-category="ガチャ"
-    data-name="くじ引き（番号・リスト）"
+  <div class="card" data-category="ガチャ" data-name="くじ引き（番号・リスト）"
     data-url="https://rakko.tools/tools/91/"
-    data-desc="番号またはリストから簡易くじ引きができるツール。役職ガチャなど複数の選択肢から公平に選びたいときに便利。">
+    data-desc="番号またはリストから簡易くじ引きができるツール。役職ガチャなど複数の選択肢から公平に選びたいときに便利。"
+    data-tags="ガチャ 企画">
     <div class="card-top">
       <h2>くじ引き（番号・リスト）</h2>
-      <span class="card-category">ガチャ</span>
+      <div class="card-tags"><span class="card-category">ガチャ</span><span class="card-category kikaku">企画</span></div>
     </div>
     <p class="card-desc">番号またはリストから簡易くじ引き。役職ガチャなど複数の選択肢から公平に選びたいときに便利。</p>
     <a class="card-link" href="https://rakko.tools/tools/91/" target="_blank" rel="noopener" onclick="event.stopPropagation()">
@@ -307,13 +100,13 @@
     </a>
   </div>
 
-  <div class="card" data-category="ガチャ"
-    data-name="スーパーガチャ"
+  <div class="card" data-category="ガチャ" data-name="スーパーガチャ"
     data-url="https://namazu-tools.net/accounts/login/?next=/super-gacha/"
-    data-desc="Googleアカウントでログイン必須。使用条件があるものの、それさえ守ればどんなライバーさんも簡単にガチャを制作できる。">
+    data-desc="Googleアカウントでログイン必須。使用条件があるものの、それさえ守ればどんなライバーさんも簡単にガチャを制作できる。"
+    data-tags="ガチャ 企画">
     <div class="card-top">
       <h2>スーパーガチャ</h2>
-      <span class="card-category">ガチャ</span>
+      <div class="card-tags"><span class="card-category">ガチャ</span><span class="card-category kikaku">企画</span></div>
     </div>
     <p class="card-desc">Googleアカウントでログイン必須。条件を守ればどんなライバーさんも簡単にガチャを制作できる。</p>
     <a class="card-link" href="https://namazu-tools.net/accounts/login/?next=/super-gacha/" target="_blank" rel="noopener" onclick="event.stopPropagation()">
@@ -322,13 +115,13 @@
     </a>
   </div>
 
-  <div class="card" data-category="画像"
-    data-name="パネル開け"
+  <div class="card" data-category="画像" data-name="パネル開け"
     data-url="https://rabitt-live.vercel.app/panel"
-    data-desc="5〜12マスなら画像をアップロードするだけでパネル開けが作れる。準備の手間がほぼゼロでかんたんに使える。">
+    data-desc="5〜12マスなら画像をアップロードするだけでパネル開けが作れる。準備の手間がほぼゼロでかんたんに使える。"
+    data-tags="画像 企画">
     <div class="card-top">
       <h2>パネル開け</h2>
-      <span class="card-category">画像</span>
+      <div class="card-tags"><span class="card-category">画像</span><span class="card-category kikaku">企画</span></div>
     </div>
     <p class="card-desc">5〜12マスなら画像をアップロードするだけでパネル開けが作れる。準備の手間がほぼゼロ。</p>
     <a class="card-link" href="https://rabitt-live.vercel.app/panel" target="_blank" rel="noopener" onclick="event.stopPropagation()">
@@ -337,13 +130,13 @@
     </a>
   </div>
 
-  <div class="card" data-category="チェッカー"
-    data-name="Palmuの全ギフカウンター"
+  <div class="card" data-category="チェッカー" data-name="Palmuの全ギフカウンター"
     data-url="https://orekun-palmu.github.io/palmu-counter/"
-    data-desc="全ギフ耐久の時にチェックができ、進捗も見える。一覧にないギフトも記入欄があるので対応幅が広い。">
+    data-desc="全ギフ耐久の時にチェックができ、進捗も見える。一覧にないギフトも記入欄があるので対応幅が広い。"
+    data-tags="チェッカー 企画">
     <div class="card-top">
       <h2>Palmuの全ギフカウンター</h2>
-      <span class="card-category">チェッカー</span>
+      <div class="card-tags"><span class="card-category">チェッカー</span><span class="card-category kikaku">企画</span></div>
     </div>
     <p class="card-desc">全ギフ耐久の進捗チェックに。一覧にないギフトも記入欄があるので対応幅が広い。</p>
     <a class="card-link" href="https://orekun-palmu.github.io/palmu-counter/" target="_blank" rel="noopener" onclick="event.stopPropagation()">
@@ -352,17 +145,32 @@
     </a>
   </div>
 
-  <div class="card" data-category="ダウンローダー"
-    data-name="cobalt — SNS動画保存"
+  <div class="card" data-category="ダウンローダー" data-name="cobalt — SNS動画保存"
     data-url="https://cobalt.tools"
-    data-desc="対応サイトのURLを貼り付けるだけで、動画・音声・画像を保存できる。余計な広告や登録なしで使えるシンプルなダウンローダー。">
+    data-desc="対応サイトのURLを貼り付けるだけで、動画・音声・画像を保存できる。余計な広告や登録なしで使えるシンプルなダウンローダー。"
+    data-tags="ダウンローダー">
     <div class="card-top">
       <h2>cobalt — SNS動画保存</h2>
-      <span class="card-category">ダウンローダー</span>
+      <div class="card-tags"><span class="card-category">ダウンローダー</span></div>
     </div>
     <p class="card-desc">URLを貼るだけで動画・音声・画像を保存。広告なし・登録なしで使えるシンプルなダウンローダー。</p>
     <a class="card-link" href="https://cobalt.tools" target="_blank" rel="noopener" onclick="event.stopPropagation()">
       cobalt.tools
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
+    </a>
+  </div>
+
+  <div class="card" data-category="生産性" data-name="Notion"
+    data-url="https://notion.so"
+    data-desc="メモ・タスク・データベースが一体になったツール。ドキュメント管理からプロジェクト管理まで何でもこなせる万能ワークスペース。"
+    data-tags="生産性">
+    <div class="card-top">
+      <h2>Notion</h2>
+      <div class="card-tags"><span class="card-category">生産性</span></div>
+    </div>
+    <p class="card-desc">メモ・タスク・データベースが一体になったツール。ドキュメント管理からプロジェクト管理まで何でもこなせる。</p>
+    <a class="card-link" href="https://notion.so" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+      notion.so
       <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
     </a>
   </div>
@@ -376,7 +184,7 @@
       <h3 id="modal-name"></h3>
       <button class="modal-close" id="modal-close" aria-label="閉じる">×</button>
     </div>
-    <span class="modal-category" id="modal-category"></span>
+    <div class="modal-tags" id="modal-tags"></div>
     <p class="modal-desc" id="modal-desc"></p>
     <a class="modal-btn" id="modal-link" target="_blank" rel="noopener">サイトを開く →</a>
   </div>
@@ -386,38 +194,40 @@
   const overlay = document.getElementById('overlay');
   const cards = document.querySelectorAll('.card');
 
-  // カードクリック → モーダル表示
   cards.forEach(card => {
     card.addEventListener('click', () => {
       document.getElementById('modal-name').textContent = card.dataset.name;
-      document.getElementById('modal-category').textContent = card.dataset.category;
+      // タグ表示
+      const tagsEl = document.getElementById('modal-tags');
+      const tags = (card.dataset.tags || card.dataset.category).split(' ');
+      tagsEl.innerHTML = tags.map(t => {
+        const isKikaku = t === '企画';
+        return `<span class="modal-category ${isKikaku?'kikaku':''}">${t}</span>`;
+      }).join('');
       document.getElementById('modal-desc').textContent = card.dataset.desc;
-      const link = document.getElementById('modal-link');
-      link.href = card.dataset.url;
-      link.textContent = 'サイトを開く →';
+      document.getElementById('modal-link').href = card.dataset.url;
       overlay.classList.add('open');
     });
   });
 
-  // モーダルを閉じる
   document.getElementById('modal-close').addEventListener('click', closeModal);
   overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   function closeModal() { overlay.classList.remove('open'); }
 
-  // フィルター
+  // フィルター（企画タグは data-tags で判定）
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const filter = btn.dataset.filter;
       cards.forEach(card => {
-        const match = filter === 'all' || card.dataset.category === filter;
+        const tags = (card.dataset.tags || card.dataset.category).split(' ');
+        const match = filter === 'all' || tags.includes(filter);
         card.classList.toggle('hidden', !match);
       });
     });
   });
 </script>
-
 </body>
 </html>
